@@ -26,8 +26,7 @@ DatabaseConnector.upload_to_db(user_data_cleaned,'dim_users',user_local_engine)
 card_details_link = "https://data-handling-public.s3.eu-west-1.amazonaws.com/card_details.pdf"
 card_data = DataExtractor.retrieve_pdf_data(card_details_link)
 
-card_date_dict = {'expiry_date': '%m/%y',
-                    'date_payment_confirmed': '%Y-%m-%d'}
+card_date_dict = {'date_payment_confirmed': '%Y-%m-%d'}
 card_data_cleaned = DataCleaning(card_data).clean_card_data(to_date_dict=card_date_dict)
 
 card_local_engine = DatabaseConnector.init_db_engine('db_creds_local.yaml')
