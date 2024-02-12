@@ -65,7 +65,7 @@ class DataCleaning:
         df = self.df.copy(deep=True)
         for i in columns:
             df[i] = pd.to_numeric(df[i], errors = 'coerce')
-            df.dropna(subset = [i],inplace=True)
+            # df.dropna(subset = [i],inplace=True)
         return df
     
     def fix_date(self,columns: dict):

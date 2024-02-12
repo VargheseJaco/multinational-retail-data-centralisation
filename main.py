@@ -40,7 +40,7 @@ store_endpoint = 'https://aqj7u5id95.execute-api.eu-west-1.amazonaws.com/prod/st
 
 num_stores = DataExtractor.list_number_of_stores(num_stores_endpoint, header_dict)
 store_data = DataExtractor.retrieve_stores_data(num_stores, store_endpoint, header_dict)
-
+#%%
 store_date_dict = {'opening_date': '%Y-%m-%d'}
 numeric_list=['latitude', 'longitude', 'staff_numbers']
 store_data_cleaned = DataCleaning(store_data).clean_store_data(to_date_dict=store_date_dict,

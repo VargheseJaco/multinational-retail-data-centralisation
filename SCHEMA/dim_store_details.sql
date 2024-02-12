@@ -1,6 +1,6 @@
 -- Updating the dim_store_details table
 SELECT MAX(LENGTH(CAST(store_code AS TEXT)))
-FROM dim_store_details; --longest entry is 11 characters
+FROM dim_store_details; --longest entry is 12 characters
 
 SELECT MAX(LENGTH(CAST(country_code AS TEXT)))
 FROM dim_store_details; --longest entry is 2 characters
@@ -17,3 +17,5 @@ ALTER TABLE dim_store_details
 	ALTER COLUMN store_type TYPE VARCHAR(255),
 	ALTER COLUMN country_code TYPE VARCHAR(2),
 	ALTER COLUMN continent TYPE VARCHAR(255);
+
+SELECT * FROM dim_store_details;
